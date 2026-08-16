@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — ELM Car Care</title>
+  <meta name="description" content="Neem contact op met ELM Car Care voor een afspraak of vraag over auto detailing." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Ga naar inhoud</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">EC</span>
+        <span class="brand-text">
+          <strong>ELM Car Care</strong>
+          <span>Detailing Studio</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="primary-navigation" data-open="false" aria-label="Hoofdmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="over-mij.html">Over mij</a></li>
+          <li><a href="pakketten.html">Pakketten</a></li>
+          <li><a href="gallerij.html">Gallerij</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-cta">
+        <a class="btn btn-outline" href="contact.html">Afspraak maken</a>
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Menu openen">
+          <span class="bars" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-scrim" data-open="false"></div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <p class="breadcrumb"><a href="index.html">Home</a> / Contact</p>
+        <p class="eyebrow">Contact</p>
+        <h1>Laten we uw auto laten stralen</h1>
+        <p class="lede" style="max-width:60ch;">Vul het formulier in of neem rechtstreeks contact op — reactie volgt doorgaans binnen enkele dagen.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-grid">
+        <div class="fade-up">
+          <h2>Stuur een bericht</h2>
+          <form action="mailto:info@elmcarcare.nl" method="post" enctype="text/plain" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <label class="required" for="naam">Naam</label>
+                <input type="text" id="naam" name="naam" autocomplete="name" required aria-describedby="naam-hint" />
+                <p class="hint" id="naam-hint">Voor- en achternaam.</p>
+              </div>
+              <div class="form-field">
+                <label class="required" for="email">E-mailadres</label>
+                <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-hint" />
+                <p class="hint" id="email-hint">Zodat we kunnen reageren op uw aanvraag.</p>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="telefoon">Telefoonnummer</label>
+                <input type="tel" id="telefoon" name="telefoon" autocomplete="tel" aria-describedby="telefoon-hint" />
+                <p class="hint" id="telefoon-hint">Optioneel, voor snel contact.</p>
+              </div>
+              <div class="form-field">
+                <label for="pakket">Gewenst pakket</label>
+                <select id="pakket" name="pakket">
+                  <option value="">Nog niet gekozen</option>
+                  <option value="basic">Basic Wash &amp; Shine</option>
+                  <option value="premium">Premium Detail</option>
+                  <option value="signature">Signature Paint Correction</option>
+                  <option value="advies">Ik wil advies</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label class="required" for="bericht">Bericht</label>
+              <textarea id="bericht" name="bericht" rows="5" required aria-describedby="bericht-hint"></textarea>
+              <p class="hint" id="bericht-hint">Vertel kort over uw auto en wat u zoekt.</p>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Bericht versturen</button>
+            <p class="form-note">
+              Dit formulier opent momenteel uw e-mailprogramma. Koppel voor
+              productiegebruik een formulierverwerker (bijv. Formspree of
+              Netlify Forms) aan de <code>action</code>-instelling.
+            </p>
+          </form>
+        </div>
+
+        <div class="fade-up">
+          <h2>Gegevens</h2>
+          <ul class="contact-info-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-7.58 7-13a7 7 0 1 0-14 0c0 5.42 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              <span>[Plaatsnaam], Nederland<br /><span class="hint">Exact adres wordt gedeeld na het maken van een afspraak.</span></span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.1 2z"/></svg>
+              <a href="tel:+31600000000">[telefoonnummer invullen]</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+              <a href="mailto:info@elmcarcare.nl">info@elmcarcare.nl</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.3" cy="6.7" r="0.6" fill="currentColor" stroke="none"/></svg>
+              <a href="https://www.instagram.com/elmcarcare/" target="_blank" rel="noopener noreferrer">@elmcarcare op Instagram</a>
+            </li>
+          </ul>
+
+          <div class="map-placeholder" role="img" aria-label="Plaatshouder voor een kaart met de locatie van ELM Car Care">
+            Vervang dit vlak door een ingesloten kaart (bijv. Google Maps) zodra het exacte adres bekend is.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>ELM Car Care</h3>
+          <p>Vakkundige auto detailing met oog voor elk detail. Onder leiding van Emircan Utkanel, gevestigd in Nederland.</p>
+          <a class="insta-callout" href="https://www.instagram.com/elmcarcare/" target="_blank" rel="noopener noreferrer">
+            <span class="insta-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.3" cy="6.7" r="0.6" fill="currentColor" stroke="none"/></svg>
+            </span>
+            <span>
+              <strong>@elmcarcare</strong>
+              <span>Volg op Instagram</span>
+            </span>
+          </a>
+        </div>
+        <div>
+          <h3>Navigatie</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="over-mij.html">Over mij</a></li>
+            <li><a href="pakketten.html">Pakketten</a></li>
+            <li><a href="gallerij.html">Gallerij</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li>[Plaatsnaam], Nederland</li>
+            <li><a href="tel:+31600000000">[telefoonnummer invullen]</a></li>
+            <li><a href="mailto:info@elmcarcare.nl">info@elmcarcare.nl</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span data-year>2026</span> ELM Car Care — Emircan Utkanel. Alle rechten voorbehouden.</p>
+        <div class="social-row">
+          <a href="https://www.instagram.com/elmcarcare/" target="_blank" rel="noopener noreferrer" aria-label="ELM Car Care op Instagram (opent in nieuw tabblad)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.3" cy="6.7" r="0.6" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
