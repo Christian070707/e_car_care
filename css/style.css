@@ -1,5 +1,5 @@
 /* =========================================================
-   ELM Car Care — design system
+   Clean Car District — design system
    Stijl: verzorgd + luxe (champagne goud) + sportief (dieprood accent)
    ========================================================= */
 
@@ -992,8 +992,8 @@ summary:focus-visible,
   font-size: 1rem;
 }
 
-.form-field input:invalid:not(:placeholder-shown),
-.form-field textarea:invalid:not(:placeholder-shown) {
+.form-field input:user-invalid,
+.form-field textarea:user-invalid {
   border-color: var(--accent-2);
 }
 
@@ -1270,4 +1270,426 @@ summary:focus-visible,
 
 .breadcrumb a:hover {
   color: var(--accent);
+}
+
+/* ---------- Tabellen (pakketvergelijking, prijzen) ---------- */
+.table-wrap {
+  overflow-x: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.data-table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.data-table th,
+.data-table td {
+  padding: 0.8rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.data-table th:first-child {
+  text-align: left;
+  font-weight: 500;
+}
+
+.data-table thead th {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  background: var(--bg-soft);
+}
+
+.data-table thead th small {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.data-table tbody tr:last-child th,
+.data-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.data-table .yes {
+  color: var(--accent-dark);
+  font-weight: 700;
+}
+
+.data-table .no {
+  color: var(--muted);
+}
+
+/* ---------- Afspraak inplannen (agenda) ---------- */
+#afspraak {
+  scroll-margin-top: 80px;
+}
+
+.booking {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.booking-main {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.booking-step {
+  margin: 0;
+  padding: 1.5rem;
+  min-width: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.booking-step legend {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  float: left;
+  width: 100%;
+  margin-bottom: 1.25rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.booking-step legend + * {
+  clear: both;
+}
+
+.step-num {
+  display: inline-grid;
+  place-items: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  background: var(--bg-dark);
+  color: var(--text-inverse);
+  font-size: 0.9rem;
+}
+
+.booking-side {
+  position: sticky;
+  top: 90px;
+}
+
+/* Pakketkeuze */
+.package-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.package-option {
+  position: relative;
+  cursor: pointer;
+}
+
+.package-option input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+}
+
+.package-option-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  height: 100%;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  color: var(--muted);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.package-option-body strong {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.package-meta {
+  margin-top: 0.4rem;
+  font-weight: 600;
+  color: var(--accent-dark);
+}
+
+.package-option:hover .package-option-body {
+  border-color: var(--accent);
+}
+
+.package-option input:checked + .package-option-body {
+  border-color: var(--accent);
+  background: var(--bg-soft);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.package-option input:focus-visible + .package-option-body {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* Kalender + tijden */
+.booking-datetime {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 1.5rem;
+}
+
+.calendar-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.calendar-title {
+  margin: 0;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.calendar-nav {
+  display: inline-grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.calendar-nav svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.calendar-nav:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.calendar-weekdays,
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.3rem;
+}
+
+.calendar-weekdays span {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--muted);
+  padding-bottom: 0.3rem;
+}
+
+.calendar-day {
+  position: relative;
+  aspect-ratio: 1;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.92rem;
+  opacity: 0.45;
+}
+
+.calendar-day.is-available {
+  opacity: 1;
+  color: var(--text);
+  background: var(--bg-soft);
+  cursor: pointer;
+}
+
+.calendar-day.is-available::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 18%;
+  width: 4px;
+  height: 4px;
+  margin-left: -2px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.calendar-day.is-available:hover {
+  border-color: var(--accent);
+}
+
+.calendar-day[aria-pressed="true"] {
+  background: var(--bg-dark);
+  color: var(--text-inverse);
+}
+
+.calendar-day.is-today {
+  font-weight: 700;
+}
+
+.calendar-legend {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.75rem 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.calendar-legend .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.slots-title {
+  margin: 0 0 0.75rem;
+  font-weight: 600;
+}
+
+.slots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+  gap: 0.5rem;
+}
+
+.slot {
+  padding: 0.6rem 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.slot:hover {
+  border-color: var(--accent);
+}
+
+.slot[aria-checked="true"] {
+  background: var(--bg-dark);
+  border-color: var(--bg-dark);
+  color: var(--text-inverse);
+}
+
+.slots-empty {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Samenvatting + bevestiging */
+.booking-summary {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0 0 1.25rem;
+  padding: 1rem;
+  border-radius: var(--radius);
+  background: var(--bg-soft);
+  font-size: 0.92rem;
+}
+
+.booking-summary div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.booking-summary dt {
+  color: var(--muted);
+}
+
+.booking-summary dd {
+  margin: 0;
+  font-weight: 600;
+  text-align: right;
+}
+
+.booking-error {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  color: var(--accent-2);
+}
+
+.booking-error:empty {
+  display: none;
+}
+
+.booking-done {
+  grid-column: 1 / -1;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.booking-done .icon {
+  display: inline-grid;
+  place-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+}
+
+.booking-done .icon svg {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.booking-done p {
+  max-width: 52ch;
+  margin-inline: auto;
+}
+
+.booking.is-done .booking-main,
+.booking.is-done .booking-side {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .booking {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .booking-side {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .package-options,
+  .booking-datetime {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .booking-step {
+    padding: 1.1rem;
+  }
 }
